@@ -1,0 +1,26 @@
+
+The Master Theorem applies to recurrences of the following form:
+T (n) = aT (n/b) + f(n) where a ≥ 1 and b > 1 are constants and f(n) is an asymptotically positive function.
+ There are 3 cases:
+1. If f(n) = O(n logb a− ) for some constant  > 0, then T (n) = Θ(n logb a ).
+2. If f(n) = Θ(n logb a logk n) with1 k ≥ 0, then T (n) = Θ(n logb a logk+1 n).
+3. If f(n) = Ω(n logb a+ ) with  > 0,
+and f(n) satisfies the regularity condition, then T (n) = Θ(f(n)).
+Regularity condition: af(n/b) ≤ cf(n) for some constant c < 1 and all sufficiently large n.
+
+Find the time complexity of the below functions in  Θ form. Write NA if the function does not apply to any case.
+
+1. T (n) = 3T (n/2) + n
+     => T (n) = Θ(n^log 3 ) (Case 1)
+
+2. T (n) = 64T (n/8) − n^2(log n)
+     => N.A.
+
+3. T (n) = 2nT (n/2) + n^n
+     => N.A.
+
+4. T (n) = 3T (n/3) + n/2
+     => T (n) = Θ(n log n) (Case 2)
+
+5. T (n) = 7T (n/3) + n^2
+     => T (n) = Θ(n^2 ) (Case 3)
